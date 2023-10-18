@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="FATEC ZONA LESTE"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-18 03:13:41 "/>
+        <attribute name="created" value="RkFURUMgWk9OQSBMRVNURTtUMDEtMTc7MjAyMy0xMC0xODsiMDI6MjU6NTcgIjsyNjM1"/>
+        <attribute name="edited" value="RkFURUMgWk9OQSBMRVNURTtUMDEtMTc7MjAyMy0xMC0xODsiMDM6MTM6NDEgIjsxOzI3MzQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nota1, nota2, mediaCalc" type="Real" array="False" size=""/>
+            <declare name="nome, aluno" type="String" array="False" size=""/>
+            <output expression="&quot;Digite o nome do aluno:&quot;" newline="True"/>
+            <input variable="nome"/>
+            <assign variable="nota1" expression="lerNota()"/>
+            <assign variable="nota2" expression="lerNota()"/>
+            <assign variable="mediaCalc" expression="calcularMedia()"/>
+            <if expression="mediaCalc &gt;= 7">
+                <then>
+                    <assign variable="aluno" expression="&quot;Aluno APROVADO&quot;"/>
+                </then>
+                <else>
+                    <assign variable="aluno" expression="&quot;Aluno REPROVADO&quot;"/>
+                </else>
+            </if>
+            <output expression="&quot;Nome do aluno: &quot; &amp; nome &amp; &quot;\n&quot; &amp; &quot;Primeira nota: &quot; &amp; nota1 &amp; &quot;\n&quot; &amp; &quot;Segunda nota: &quot; &amp; nota2 &amp; &quot;\n&quot; &amp; &quot;M&#233;dia do aluno: &quot; &amp; mediaCalc &amp; &quot;\n&quot; &amp; aluno" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularMedia" type="Real" variable="aMedia">
+        <parameters>
+            <parameter name="nota1" type="Real" array="False"/>
+            <parameter name="nota2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="aMedia" type="Real" array="False" size=""/>
+            <assign variable="aMedia" expression="(nota1+nota2)/2"/>
+        </body>
+    </function>
+    <function name="lerNota" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Digite a nota:&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
