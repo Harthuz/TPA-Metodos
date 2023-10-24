@@ -4,9 +4,10 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="FATEC ZONA LESTE"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-10-18 03:13:41 "/>
+        <attribute name="saved" value="2023-10-24 10:44:44 "/>
         <attribute name="created" value="RkFURUMgWk9OQSBMRVNURTtUMDEtMTc7MjAyMy0xMC0xODsiMDI6MjU6NTcgIjsyNjM1"/>
         <attribute name="edited" value="RkFURUMgWk9OQSBMRVNURTtUMDEtMTc7MjAyMy0xMC0xODsiMDM6MTM6NDEgIjsxOzI3MzQ="/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNDsiMTA6NDQ6NDQgIjs0OzI3MDk="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -15,9 +16,11 @@
             <declare name="nome, aluno" type="String" array="False" size=""/>
             <output expression="&quot;Digite o nome do aluno:&quot;" newline="True"/>
             <input variable="nome"/>
+            <output expression="&quot;Digite a 1&#176; nota&quot;" newline="True"/>
             <assign variable="nota1" expression="lerNota()"/>
+            <output expression="&quot;Digite a 2&#176; nota&quot;" newline="True"/>
             <assign variable="nota2" expression="lerNota()"/>
-            <assign variable="mediaCalc" expression="calcularMedia()"/>
+            <assign variable="mediaCalc" expression="calcularMedia(nota1, nota2)"/>
             <if expression="mediaCalc &gt;= 7">
                 <then>
                     <assign variable="aluno" expression="&quot;Aluno APROVADO&quot;"/>
@@ -26,10 +29,10 @@
                     <assign variable="aluno" expression="&quot;Aluno REPROVADO&quot;"/>
                 </else>
             </if>
-            <output expression="&quot;Nome do aluno: &quot; &amp; nome &amp; &quot;\n&quot; &amp; &quot;Primeira nota: &quot; &amp; nota1 &amp; &quot;\n&quot; &amp; &quot;Segunda nota: &quot; &amp; nota2 &amp; &quot;\n&quot; &amp; &quot;M&#233;dia do aluno: &quot; &amp; mediaCalc &amp; &quot;\n&quot; &amp; aluno" newline="True"/>
+            <output expression="&quot;Nome do aluno: &quot; &amp; nome&#13;&#10;&amp; &quot; Primeira nota: &quot; &amp; nota1  &#13;&#10;&amp; &quot; Segunda nota: &quot; &amp; nota2  &#13;&#10;&amp;&quot; M&#233;dia do aluno: &quot; &amp;mediaCalc  &#13;&#10;&amp;&quot; &quot;&amp;aluno" newline="True"/>
         </body>
     </function>
-    <function name="calcularMedia" type="Real" variable="aMedia">
+    <function name="calcularMedia" type="Real" variable="AMedia">
         <parameters>
             <parameter name="nota1" type="Real" array="False"/>
             <parameter name="nota2" type="Real" array="False"/>
@@ -39,10 +42,17 @@
             <assign variable="aMedia" expression="(nota1+nota2)/2"/>
         </body>
     </function>
-    <function name="lerNota" type="None" variable="">
+    <function name="lerNota" type="Real" variable="nota">
         <parameters/>
         <body>
-            <output expression="&quot;Digite a nota:&quot;" newline="True"/>
+            <declare name="nota" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite a nota::&quot;" newline="True"/>
+            <input variable="nota"/>
+            <while expression="nota &gt; 10 || nota &lt; 0">
+                <output expression="&quot;Digite uma nota v&#225;lida!&quot;" newline="True"/>
+                <output expression="&quot;Digite a nota: &quot;" newline="True"/>
+                <input variable="nota"/>
+            </while>
         </body>
     </function>
 </flowgorithm>
