@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-24 10:58:14 "/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNDsiMTA6NDU6NDUgIjsyNjAw"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNDsiMTA6NTg6MTQgIjs2OzI3MTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="valor1, valor2" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite o 1&#176; n&#250;mero: &quot;" newline="True"/>
+            <input variable="valor1"/>
+            <output expression="&quot;Digite o 2&#176; n&#250;mero: &quot;" newline="True"/>
+            <input variable="valor2"/>
+            <call expression="diferencia(valor1, valor2)"/>
+        </body>
+    </function>
+    <function name="diferencia" type="Real" variable="var1">
+        <parameters>
+            <parameter name="var1" type="Real" array="False"/>
+            <parameter name="var2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="di" type="Real" array="False" size=""/>
+            <if expression="var1 &gt; var2">
+                <then>
+                    <assign variable="di" expression="var1 - var2"/>
+                </then>
+                <else>
+                    <if expression="var2 &gt; var1">
+                        <then>
+                            <assign variable="di" expression="var2 - var1"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+            <if expression="var1 != var2">
+                <then>
+                    <output expression="&quot;A diferen&#231;a entre os n&#250;meros &quot; &amp; var1 &amp; &quot; e &quot; &amp; var2 &amp; &quot; &#233; &quot; &amp; di" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Os n&#250;meros s&#227;o iguais.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
