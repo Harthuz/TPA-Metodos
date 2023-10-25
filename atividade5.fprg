@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-25 07:38:39 "/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDc6MjU6MDUgIjsyNjAx"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDc6Mzg6MzkgIjsyOzI3MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="s1, s2, hipo" type="Real" array="False" size=""/>
+            <output expression="&quot;A seguir, digite a media dos lados adjacentes ao angulo reto para que o programa posssa calcular a hipotenusa&quot;" newline="True"/>
+            <output expression="&quot;Medida do primeiro lado:&quot;" newline="True"/>
+            <input variable="s1"/>
+            <output expression="&quot;Medida do segundo lado:&quot;" newline="True"/>
+            <input variable="s2"/>
+            <assign variable="hipo" expression="calculo(s1,s2)"/>
+            <output expression="&quot;Medida do primeiro lado: &quot; &amp;s1 &amp;&quot; Medida do primeiro lado: &quot; &amp;s2 &amp;&quot; Hipotenusa: &quot; &amp;hipo" newline="True"/>
+        </body>
+    </function>
+    <function name="calculo" type="Real" variable="hipo">
+        <parameters>
+            <parameter name="s1O" type="Real" array="False"/>
+            <parameter name="s2O" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="hipo, i" type="Real" array="False" size=""/>
+            <assign variable="hipo" expression="((s1O*s1O)+(s2O * s2O))/2"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <assign variable="hipo" expression="(hipo + ((s1O*s1O)+(s2O * s2O)) / hipo) / 2.0"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
