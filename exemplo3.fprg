@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-25 09:05:26 "/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDg6NTU6NTQgIjsyNjA5"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDk6MDU6MjYgIjs1OzI3MTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="idade1, idade2" type="Integer" array="False" size=""/>
+            <declare name="nome1, nome2, texto" type="String" array="False" size=""/>
+            <output expression="&quot;Digite o nome da 1&#176; pessoa:: &quot;" newline="True"/>
+            <input variable="nome1"/>
+            <output expression="&quot;Digite a idade da 1&#176; pessoa: &quot;" newline="True"/>
+            <input variable="idade1"/>
+            <output expression="&quot;Digite o nome da 2&#176; pessoa:: &quot;" newline="True"/>
+            <input variable="nome2"/>
+            <output expression="&quot;Digite a idade da 2&#176; pessoa: &quot;" newline="True"/>
+            <input variable="idade2"/>
+            <assign variable="texto" expression="PessoaMaisVelha(nome1, idade1, nome2, idade2)"/>
+            <output expression="texto" newline="True"/>
+        </body>
+    </function>
+    <function name="PessoaMaisVelha" type="String" variable="PessoaMaisVelha">
+        <parameters>
+            <parameter name="n1" type="String" array="False"/>
+            <parameter name="id1" type="Integer" array="False"/>
+            <parameter name="n2" type="String" array="False"/>
+            <parameter name="id2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="PessoaMaisVelha" type="String" array="False" size=""/>
+            <if expression="id1 &gt; id2">
+                <then>
+                    <assign variable="PessoaMaisVelha" expression="n1 &amp;&quot; &#233; a pessoa mais velha.&quot;"/>
+                </then>
+                <else>
+                    <if expression="id2 &gt; id1">
+                        <then>
+                            <assign variable="PessoaMaisVelha" expression="n2 &amp;&quot; &#233; a pessoa mais velha.&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="PessoaMaisVelha" expression="n1 &amp;&quot; e &quot; &amp;n2 &amp;&quot; tem a mesma idade.&quot;"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

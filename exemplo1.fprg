@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-25 08:48:20 "/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDg6NDQ6NTYgIjsyNjA5"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDg6NDg6MjAgIjsxOzI3MTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <call expression="digite()"/>
+            <output expression="&quot;Digite um n&#250;mero: &quot;" newline="True"/>
+            <input variable="a"/>
+            <call expression="dobro(a)"/>
+        </body>
+    </function>
+    <function name="digite" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Digite um n&#250;mero:: &quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="dobro" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <assign variable="d" expression="n * 2"/>
+            <output expression="&quot;Dobro de &quot; &amp;n &amp;&quot; &#233; &quot; &amp;d" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-25 09:08:50 "/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDk6MDU6NDAgIjsyNjAw"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDk6MDg6NTAgIjsyOzI3MTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <output expression="&quot;Entre com um n&#250;mero:: &quot;" newline="True"/>
+            <input variable="num"/>
+            <if expression="RestoParDois(num) == 0">
+                <then>
+                    <output expression="&quot;O n&#250;mero &#233; par.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;O n&#250;mero &#233; impar.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="RestoParDois" type="Integer" variable="a">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="a" expression="a % 2"/>
+        </body>
+    </function>
+</flowgorithm>
