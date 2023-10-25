@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-24 08:33:09 "/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNDsiMTE6MDE6MzggIjsyNTk1"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNDsiMDg6MzM6MDkgIjszOzI3MTQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="h, s, pesoIdeal, pesoFormatado" type="Real" array="False" size=""/>
+            <do expression="s != 2 &amp;&amp; s != 1">
+                <output expression="&quot;Digite o seu sexo, (1) Masculino ou (2) Feminino&quot;" newline="True"/>
+                <input variable="s"/>
+                <if expression="s != 2 &amp;&amp; s != 1">
+                    <then>
+                        <output expression="&quot;Digite uma informa&#231;&#227;o v&#225;lida.&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </do>
+            <output expression="&quot;Digite a sua altura em metros&quot;" newline="True"/>
+            <input variable="h"/>
+            <assign variable="pesoIdeal" expression="calcularPesoIdeal(s, h)"/>
+            <output expression="&quot;O seu peso ideal &#233; &quot; &amp; pesoIdeal&amp; &quot; Kg&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularPesoIdeal" type="Real" variable="peso">
+        <parameters>
+            <parameter name="sO" type="Real" array="False"/>
+            <parameter name="hO" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="peso" type="Real" array="False" size=""/>
+            <if expression="sO == 1">
+                <then>
+                    <assign variable="peso" expression="(72.7*hO) - 58"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="sO == 2">
+                <then>
+                    <assign variable="peso" expression="(62.1 *hO) - 44.7"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
