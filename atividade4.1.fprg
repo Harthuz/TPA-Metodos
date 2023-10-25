@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-10-25 08:43:27 "/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDc6NDM6MjcgIjsyNjA1"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDg6MTQ6MDMgIjsxO1VzZXI7REVTS1RPUC1GQjFTMDAyOzIwMjMtMTAtMjU7IjA3OjQzOjI3ICI7YXRpdmlkYWRlNC5mcHJnOzY4OTc="/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUZCMVMwMDI7MjAyMy0xMC0yNTsiMDg6NDM6MjcgIjsxMTsyNzYz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="escolha, resultado" type="Integer" array="False" size=""/>
+            <do expression="escolha &gt; 9">
+                <output expression="&quot;CALCULADORA JAVA | | 1 &#8211; Soma | 2 &#8211; Subtra&#231;&#227;o | 3 &#8211; Divis&#227;o | 4 &#8211; Multiplica&#231;&#227;o | 5 &#8211; Resto da Divis&#227;o | 6 &#8211; Dobro | 7 &#8211; Quadrado | 8 &#8211; Cubo | 9 &#8211; Raiz Quadrada | 0 &#8211; Sair&quot;" newline="True"/>
+                <input variable="escolha"/>
+            </do>
+            <if expression="escolha == 0">
+                <then>
+                    <output expression="&quot;Saindo...&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="escolha &gt;= 1 &amp;&amp; escolha &lt;= 9">
+                        <then>
+                            <assign variable="resultado" expression="realizarOperacao(escolha)"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Escolha inv&#225;lida&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="calcularCubo" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1 * n1 * n1"/>
+            <output expression="n1 &amp;&quot; ao cubo&quot; &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularRaizQuadrada" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado, i" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1/2"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <assign variable="resultado" expression="(resultado + n1 / resultado) / 2"/>
+            </for>
+            <output expression="&quot;Raiz quadrada de &quot; &amp;n1 &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularDivisao" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+            <parameter name="n2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1 / n2"/>
+            <output expression="n1 &amp;&quot; dividido por &quot; &amp;n2 &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularDobro" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1 * 2"/>
+            <output expression="&quot;Dobro de &quot; &amp;n1 &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularMultiplicacao" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+            <parameter name="n2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1 * n2"/>
+            <output expression="n1 &amp;&quot; multiplicado por &quot; &amp;n2 &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularQuadrado" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1 * n1"/>
+            <output expression="n1 &amp;&quot; ao quadrado&quot; &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularRestoDivisao" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+            <parameter name="n2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1 %  n2"/>
+            <output expression="&quot;Resto de &quot;&amp;n1 &amp;&quot; dividido por &quot; &amp;n2 &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularSoma" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+            <parameter name="n2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1+ n2"/>
+            <output expression="n1 &amp;&quot; + &quot; &amp;n2 &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="calcularSubtracao" type="None" variable="">
+        <parameters>
+            <parameter name="n1" type="Real" array="False"/>
+            <parameter name="n2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="n1 - n2"/>
+            <output expression="n1 &amp;&quot; - &quot; &amp;n2 &amp;&quot; = &quot; &amp;resultado" newline="True"/>
+        </body>
+    </function>
+    <function name="realizarOperacao" type="Real" variable="resultado">
+        <parameters>
+            <parameter name="escolhaO" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="numero1, numero2, resultado" type="Real" array="False" size=""/>
+            <assign variable="resultado" expression="0"/>
+            <if expression="escolhaO &gt;= 1 &amp;&amp; escolhaO &lt;= 5">
+                <then>
+                    <output expression="&quot;Digite o primeiro n&#250;mero&quot;" newline="True"/>
+                    <input variable="numero1"/>
+                    <output expression="&quot;Digite o segundo n&#250;mero&quot;" newline="True"/>
+                    <input variable="numero2"/>
+                </then>
+                <else>
+                    <output expression="&quot;Digite o n&#250;mero&quot;" newline="True"/>
+                    <input variable="numero1"/>
+                </else>
+            </if>
+            <if expression="escolhaO == 1">
+                <then>
+                    <call expression="calcularSoma(numero1, numero2)"/>
+                </then>
+                <else>
+                    <if expression="escolhaO == 2">
+                        <then>
+                            <call expression="calcularSubtracao(numero1, numero2)"/>
+                        </then>
+                        <else>
+                            <if expression="escolhaO== 3">
+                                <then>
+                                    <call expression="calcularDivisao(numero1, numero2)"/>
+                                </then>
+                                <else>
+                                    <if expression="escolhaO== 4">
+                                        <then>
+                                            <call expression="calcularMultiplicacao(numero1, numero2)"/>
+                                        </then>
+                                        <else>
+                                            <if expression="escolhaO== 5">
+                                                <then>
+                                                    <call expression="calcularRestoDivisao(numero1, numero2)"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="escolhaO== 6">
+                                                        <then>
+                                                            <call expression="calcularDobro(numero1)"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="escolhaO== 7">
+                                                                <then>
+                                                                    <call expression="calcularQuadrado(numero1)"/>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="escolhaO== 8">
+                                                                        <then>
+                                                                            <call expression="calcularCubo(numero1)"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <if expression="escolhaO== 9">
+                                                                                <then>
+                                                                                    <call expression="calcularRaizQuadrada(numero1)"/>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <output expression="&quot;Escolha inv&#225;lida.&quot;" newline="True"/>
+                                                                                </else>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
